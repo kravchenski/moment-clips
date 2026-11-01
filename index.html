@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Moment Clips</title><link rel="stylesheet" href="style.css"></head>
+<body>
+<h1>Moment Clips</h1>
+<p>Moment Clips is a personal, non-commercial tool. It cuts long videos into short vertical clips and uploads the finished
+clips to the TikTok account of its owner, after the owner has authorised the app with TikTok Login.</p>
+<p>It does not collect data about other TikTok users and has no public sign-up.</p>
+<h2>Connect your TikTok account</h2>
+<p>The owner signs in with TikTok and authorises two permissions: <b>user.info.basic</b> (shows which account is connected)
+and <b>video.upload</b> (sends a finished clip to the account's drafts; the owner writes the caption, chooses who can watch
+and posts it in the TikTok app).</p>
+<p><a id="connect" href="#"><b>Connect TikTok</b></a></p>
+<script>
+// CLIENT_KEY is public (it is part of every TikTok authorisation link); the secret is never on this site.
+var key = 'CLIENT_KEY', redirect = location.origin + location.pathname.replace(/[^/]*$/, '') + 'callback/';
+var state = Math.random().toString(36).slice(2);
+document.getElementById('connect').href = 'https://www.tiktok.com/v2/auth/authorize/?client_key=' + encodeURIComponent(key) +
+  '&response_type=code&scope=' + encodeURIComponent('user.info.basic,video.upload') +
+  '&redirect_uri=' + encodeURIComponent(redirect) + '&state=' + state;
+</script>
+<ul><li><a href="terms.html">Terms of Service</a></li><li><a href="privacy.html">Privacy Policy</a></li></ul>
+<footer>Contact: <a href="https://github.com/kravchenski">github.com/kravchenski</a></footer>
+</body></html>
