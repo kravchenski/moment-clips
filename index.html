@@ -13,7 +13,7 @@ and posts it in the TikTok app).</p>
 <p><a id="connect" href="#"><b>Connect TikTok</b></a></p>
 <script>
 // CLIENT_KEY is public (it is part of every TikTok authorisation link); the secret is never on this site.
-var key = 'CLIENT_KEY', redirect = location.origin + location.pathname.replace(/[^/]*$/, '') + 'callback/';
+var key = 'awfh3eq6hwe7i8cg', redirect = location.origin + location.pathname.replace(/[^/]*$/, '') + 'callback/';
 var state = Math.random().toString(36).slice(2);
 document.getElementById('connect').href = 'https://www.tiktok.com/v2/auth/authorize/?client_key=' + encodeURIComponent(key) +
   '&response_type=code&scope=' + encodeURIComponent('user.info.basic,video.upload') +
